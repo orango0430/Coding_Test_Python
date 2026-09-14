@@ -1,8 +1,9 @@
+from collections import defaultdict
 def solution(clothes):
     answer = 1
-    d = {}
+    d = defaultdict(int)
     for name,kind in clothes:
-        d[kind] = d.get(kind,0) + 1
+        d[kind] += 1
     for i in d.values():
-        answer *= (i + 1)
+        answer *= (i+1)
     return answer - 1
